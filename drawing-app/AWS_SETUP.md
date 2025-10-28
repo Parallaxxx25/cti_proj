@@ -14,7 +14,7 @@ This guide explains how to deploy the image generation Lambda function and conne
 2. Click "Create function"
 3. Choose "Author from scratch"
 4. Function name: `image-generation-lambda`
-5. Runtime: Python 3.11
+5. Runtime: Python 3.13
 6. Architecture: x86_64
 7. Click "Create function"
 
@@ -78,9 +78,8 @@ This guide explains how to deploy the image generation Lambda function and conne
 
 Add these environment variables to your Next.js project:
 
-\`\`\`env
+\`\`\`env.local
 API_GATEWAY_URL=https://[your-api-id].execute-api.[region].amazonaws.com/prod/generate
-API_GATEWAY_API_KEY=[optional-if-you-set-api-key]
 \`\`\`
 
 ## Optional: Add API Key Authentication
@@ -95,18 +94,10 @@ API_GATEWAY_API_KEY=[optional-if-you-set-api-key]
 ## Testing
 
 Test your Lambda function directly:
-\`\`\`bash
-aws lambda invoke \
-  --function-name image-generation-lambda \
-  --payload '{"imageData":"base64data","style":"realistic"}' \
-  response.json
-\`\`\`
-
-Test via API Gateway:
-\`\`\`bash
-curl -X POST https://[your-api-url]/prod/generate \
-  -H "Content-Type: application/json" \
-  -d '{"imageData":"base64data","style":"realistic"}'
+\`\`\`Test Event JSON
+{
+  "body": "{\"imageData\":\"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==\",\"style\":\"realistic\"}"
+}
 \`\`\`
 
 ## Monitoring
