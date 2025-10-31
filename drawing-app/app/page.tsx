@@ -2,18 +2,39 @@ import DrawingCanvas from "@/components/drawing-canvas"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-10 text-center space-y-3">
-          <h1 className="text-5xl md:text-6xl font-bold text-balance bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent">
-            AI Drawing Studio
-          </h1>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto text-pretty">
-            Draw your sketch and let Gemini AI analyze and transform your artwork with intelligent insights
+    <>
+      <div className="min-h-screen bg-gradient-to-b from-background to-background/80 py-8 px-4">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="text-center space-y-3">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+              AI Sketch to Image
+            </h1>
+            <p className="text-muted-foreground text-lg">
+              Transform your drawings into beautiful images with Gemini AI
+            </p>
+          </div>
+
+          <DrawingCanvas />
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="border-t border-border/50 bg-card/30 backdrop-blur py-6">
+        <div className="container mx-auto px-4 text-center space-y-2">
+          <p className="text-sm text-muted-foreground">
+            This project is part of{" "}
+            <span className="font-semibold text-foreground">
+              CLOUD TECHNOLOGY INFRASTRUCTURE (1-2025)
+            </span>
+          </p>
+          <p className="text-sm text-muted-foreground">
+            School of Information Technology, KMITL
+          </p>
+          <p className="text-xs text-muted-foreground/70 mt-2">
+            Powered by Next.js, AWS Lambda, and Google Gemini AI
           </p>
         </div>
-        <DrawingCanvas />
-      </div>
-    </main>
+      </footer>
+    </>
   )
 }
