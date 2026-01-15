@@ -163,14 +163,11 @@ School of Information Technology, KMITL
 ## Member
 
 Natthawee Naewkampol
-
 Phachara Pornanothai
-
 Yodsakorn Chuwong
-
 Porntipa Phunsri
-
 Asia Onprom
+
 ---
 
 <p align="center">
